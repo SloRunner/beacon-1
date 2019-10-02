@@ -5520,11 +5520,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 //       it was the one which was commented out
 int ActiveProtocol()
 {
-/*
-    if (IsSporkActive(SPORK_17_FAKE_STAKE_FIX) && chainActive.Tip()->nHeight >= GetSporkValue(SPORK_17_FAKE_STAKE_FIX))
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
-*/
-    if (IsSporkActive(SPORK_18_NEW_PROTOCOL_ENFORCEMENT) && chainActive.Tip()->nHeight >= GetSporkValue(SPORK_18_NEW_PROTOCOL_ENFORCEMENT))
+    if (IsSporkActive(SPORK_19_NEW_PROTOCOL_ENFORCEMENT))
         return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
